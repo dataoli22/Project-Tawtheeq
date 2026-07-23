@@ -1,7 +1,6 @@
 # Project Tawtheeq — Tokenised Credit MVP
 
-Open-source, zero-cost proof-of-concept of the full loop described in the PRD
-([Tawtheeq_MVP_PRD.md](Tawtheeq_MVP_PRD.md)):
+Open-source, zero-cost proof-of-concept of a smart-contract-based SME invoice-financing platform:
 
 **invoice submitted → alt-data score computed → invoice tokenised (ERC-721) →
 smart contract auto-disburses → repayment → score trajectory updates** — with
@@ -52,21 +51,12 @@ Top bar: pick a persona, toggle English/العربية (full RTL layout, not jus
 
 To regenerate the seed personas: `cd data/pipeline && python generate_personas.py`.
 
-## Milestone status (PRD Section 9)
+## Design notes
 
-- ✅ **M1** — data pipeline live, 4 personas with documented provenance
-- ✅ **M2** — mint → score → fund → repay loop runs end-to-end on Hardhat local network
-- ⬜ **M3** — Sepolia testnet deployment (deferred; local Hardhat is the guaranteed demo path per PRD Section 11)
-- ✅ **M4** — Dashboard / Invoices / Credit Score / Funding wired to the live API, English/Arabic + RTL
-- ✅ **M5** — chatbot answers score-explanation questions for all 4 personas (5-provider fallback chain, see below)
-- 🟡 **M6** — demo polish: light/dark mode, About & Help page, and alt-data provider transparency done; Sepolia deployment still open
-
-## Notes on fidelity to the PRD
-
-- Funding threshold (score ≥ 60) and take rate (1.5%) are configurable constants in `CreditLogic.sol`, matching Section 6.4.
-- The oracle pattern (Section 6.2) is a plain backend-signed push — `pushScore` / `requestFunding` / `recordRepayment` — no paid oracle network.
-- Chatbot guardrails (Section 7.4): context-injected per persona only, never fine-tuned, never discusses other personas' data.
-- Alt-data provider adapters (Section 6.5): each of the 5 scoring categories is backed by a named mock adapter (`backend/app/providers/adapters.py`) documenting the real API it stands in for (POS, ERP, KYC, B2B network, e-commerce/utility). `GET /providers/{persona_id}` and the Credit Score screen's "Data Sources" panel make every score traceable to a specific signal, per Section 10's success metric.
+- Funding threshold (score ≥ 60) and take rate (1.5%) are configurable constants in `CreditLogic.sol`.
+- The oracle pattern is a plain backend-signed push — `pushScore` / `requestFunding` / `recordRepayment` — no paid oracle network.
+- Chatbot guardrails: context-injected per persona only, never fine-tuned, never discusses other personas' data.
+- Alt-data provider adapters: each of the 5 scoring categories is backed by a named mock adapter (`backend/app/providers/adapters.py`) documenting the real API it stands in for (POS, ERP, KYC, B2B network, e-commerce/utility). `GET /providers/{persona_id}` and the Credit Score screen's "Data Sources" panel make every score traceable to a specific signal.
 
 ### Chatbot providers
 
@@ -74,6 +64,6 @@ To regenerate the seed personas: `cd data/pipeline && python generate_personas.p
 
 1. Whichever of **Anthropic / OpenAI / Gemini / Groq** has an API key set in the root `.env` (`CHAT_PROVIDER=auto`, the default), or a specific one pinned via `CHAT_PROVIDER=anthropic|openai|gemini|groq`.
 2. **Ollama** (local, zero API cost) — set `OLLAMA_BASE_URL`/`OLLAMA_MODEL`, run `ollama serve` + `ollama pull llama3`.
-3. A deterministic rule-based explainer — guarantees the demo works with zero setup and zero cost, per PRD Section 11's risk mitigation.
+3. A deterministic rule-based explainer — guarantees the demo works with zero setup and zero cost.
 
 Each step falls through to the next automatically on any error (missing key, quota, network, model not pulled), and the response says which providers were tried if it had to fall back.

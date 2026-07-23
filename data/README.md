@@ -4,7 +4,7 @@
 
 - `pipeline/generate_personas.py` — seed pipeline, re-runnable (`python generate_personas.py`)
 - `pipeline/scoring.py` — the canonical Tawtheeq Score formula (also imported by the Phase 2 backend)
-- `output/personas.json` — structured persona records (schema in the PRD, Section 5.4)
+- `output/personas.json` — structured persona records: profile metadata, invoice history, scoring inputs, computed score, and score trajectory
 - `output/personas.md` — human-readable data card, one section per persona
 
 ## Provenance
@@ -44,5 +44,5 @@ cd data/pipeline && python generate_personas.py
 ```
 
 Deterministic given the fixed `SEED` in the script — re-running produces identical output.
-To scale beyond 4 personas, extend the `PERSONAS` list (pipeline scales to N with no code changes
-beyond adding entries, per PRD Open Question 3).
+To scale beyond 4 personas, extend the `PERSONAS` list — the pipeline scales to N with no code
+changes beyond adding entries.
