@@ -15,7 +15,6 @@ a persona-grounded chatbot explaining every score.
 | [`contracts/`](contracts/) | Phase 2 — Hardhat project: `InvoiceToken` (ERC-721), `CreditLogic` |
 | [`backend/`](backend/) | Phase 2 — FastAPI oracle/API layer wrapping the contracts + alt-data provider adapters |
 | [`frontend/`](frontend/) | Phase 3 — React + Tailwind sidebar-nav app, English/Arabic + RTL, light/dark mode, chatbot |
-| [`assets/`](assets/) | Pitch deck (PDF/PPTX) + video — not committed to git (see [Pitch deck & video](#pitch-deck--video) below) |
 
 ## Running the full demo locally
 
@@ -47,36 +46,11 @@ Open the printed Vite URL. The sidebar has 5 screens:
 - **Credit Score** — full weighted breakdown + a "Data Sources" panel showing exactly which alt-data signal drove each point.
 - **Funding** — approve/deny is automatic at mint time (score ≥ 60 threshold), but this screen lets you re-check funding manually and simulate repayments to watch the score climb.
 - **Playground** — a sandbox: drag sliders for every raw alt-data signal (POS volume, KYC speed, vendor ratings, etc.) and watch the Tawtheeq Score recompute live via `POST /playground/score` — pure function of its input, touches no persona/DB/chain. Includes a baked-in step-by-step guide.
-- **About & Help** — what Tawtheeq is (pulled from the original pitch deck, Section "Pitch deck & video" below), plus a walkthrough of how to use this demo.
+- **About & Help** — what Tawtheeq is (problem, solution, scoring model, personas), plus a walkthrough of how to use this demo.
 
 Top bar: pick a persona, toggle English/العربية (full RTL layout, not just translated strings), and toggle light/dark mode — all independent of your OS setting and persisted in `localStorage`.
 
 To regenerate the seed personas: `cd data/pipeline && python generate_personas.py`.
-
-## Pitch deck & video
-
-`assets/` holds the original pitch deck (`Project_Tawtheeq.pdf`, `.pptx`) and a ~700MB pitch video —
-intentionally **not committed to git** (see `.gitignore`: `/assets/`, `frontend/public/media`), since
-a 700MB binary has no business in version control.
-
-The frontend serves them locally via a **filesystem junction** at `frontend/public/media` pointing
-at `/assets` (created once, see below) — Vite serves anything under `public/` as-is, so the About &
-Help page can `<video src="/media/Project Tawtheeq.mp4">` and link the PDF without ever copying the
-700MB file. This junction is machine-local; a fresh clone needs to recreate it once:
-
-```powershell
-# Windows (no admin rights needed — this is a junction, not a symlink)
-cmd /c mklink /J "frontend\public\media" "assets"
-```
-
-```bash
-# macOS/Linux
-ln -s ../../assets frontend/public/media
-```
-
-Without this, the About & Help page's video/PDF links will 404 — everything else in the app works
-fine regardless. Note `npm run build` (unlike `npm run dev`) copies `public/` into `dist/` verbatim,
-which would pull in the full 700MB — irrelevant for local dev, but worth knowing before a production build.
 
 ## Milestone status (PRD Section 9)
 

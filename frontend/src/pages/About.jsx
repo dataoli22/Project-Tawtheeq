@@ -1,8 +1,5 @@
 import { useLanguage } from "../i18n/LanguageContext";
 
-const VIDEO_URL = "/media/Project%20Tawtheeq.mp4";
-const DECK_URL = "/media/Project_Tawtheeq.pdf";
-
 const COMPARISON_ROWS = [
   ["Approval Speed", "7–14 days", "2–3 days", "Minutes (on-chain execution)"],
   ["Collateral-Free Lending", "Rare", "Sometimes", "Always (tokenised asset-based)"],
@@ -131,27 +128,6 @@ export default function About() {
             ))}
           </tbody>
         </table>
-      </Section>
-
-      <Section title="Pitch Deck & Video">
-        <div className="grid md:grid-cols-2 gap-4">
-          <video controls className="w-full rounded-lg border border-neutral-200 dark:border-neutral-700" preload="none">
-            <source src={VIDEO_URL} type="video/mp4" />
-            {t("watchPitch")}
-          </video>
-          <div className="flex flex-col justify-center gap-2 text-sm">
-            <a href={VIDEO_URL} target="_blank" rel="noreferrer" className="text-teal-600 hover:underline">
-              🎬 {t("watchPitch")} (new tab)
-            </a>
-            <a href={DECK_URL} target="_blank" rel="noreferrer" className="text-teal-600 hover:underline">
-              📄 {t("downloadDeck")}
-            </a>
-            <p className="text-xs text-neutral-400 mt-2">
-              Served locally from <code>/assets</code> — not committed to the repo (too large for
-              git); only available when running the app locally from this machine.
-            </p>
-          </div>
-        </div>
       </Section>
 
       <Section title={t("howToUseDemo")}>
