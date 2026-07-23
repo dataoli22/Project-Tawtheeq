@@ -231,6 +231,7 @@ backend/*.db
 
 # Pitch deck source assets (huge video/pptx) — never commit.
 /assets/
+frontend/public/media
 
 # Internal product requirements doc — not for public repo distribution.
 /Tawtheeq_MVP_PRD.md
