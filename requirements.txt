@@ -1,0 +1,18 @@
+# Data pipeline (data/pipeline/generate_personas.py)
+pandas>=2.0
+numpy>=1.24
+Faker>=22.0
+
+# Backend API (backend/app/)
+fastapi>=0.110
+uvicorn[standard]>=0.29
+web3>=6.15
+pydantic>=2.6
+python-dotenv>=1.0
+httpx>=0.27
+
+# Chatbot providers (all optional — install only the ones you plan to use;
+# Ollama needs no Python package, just a local `ollama serve` + a pulled model)
+anthropic>=0.40
+openai>=1.50
+google-generativeai>=0.8

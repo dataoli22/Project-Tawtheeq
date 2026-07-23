@@ -1,0 +1,713 @@
+[
+  {
+    "persona_id": "P1_expat_operator",
+    "display_name": "Adil",
+    "sector": "Logistics",
+    "business_age_months": 14,
+    "narrative": "Expat logistics operator. Home-country credit history exists but is not portable in the UAE, so the score must derive entirely from local platform + transaction behaviour.",
+    "invoices": [
+      {
+        "id": "INV-1001",
+        "counterparty": "Rodriguez Est.",
+        "amount_aed": 7200.0,
+        "due_date": "2026-07-24",
+        "status": "pending"
+      },
+      {
+        "id": "INV-1002",
+        "counterparty": "Doyle Ltd Group",
+        "amount_aed": 12400.0,
+        "due_date": "2026-07-28",
+        "status": "pending"
+      },
+      {
+        "id": "INV-1003",
+        "counterparty": "Mcclain Group",
+        "amount_aed": 14600.0,
+        "due_date": "2026-08-10",
+        "status": "pending"
+      },
+      {
+        "id": "INV-1004",
+        "counterparty": "Davis and Sons Est.",
+        "amount_aed": 23900.0,
+        "due_date": "2026-06-07",
+        "status": "financed"
+      },
+      {
+        "id": "INV-1005",
+        "counterparty": "Guzman Trading LLC",
+        "amount_aed": 22600.0,
+        "due_date": "2026-07-31",
+        "status": "pending"
+      },
+      {
+        "id": "INV-1006",
+        "counterparty": "Gardner Trading LLC",
+        "amount_aed": 27400.0,
+        "due_date": "2026-07-09",
+        "status": "financed"
+      },
+      {
+        "id": "INV-1007",
+        "counterparty": "Blake and Sons Est.",
+        "amount_aed": 19100.0,
+        "due_date": "2026-06-07",
+        "status": "financed"
+      },
+      {
+        "id": "INV-1008",
+        "counterparty": "Henderson FZE",
+        "amount_aed": 18100.0,
+        "due_date": "2026-05-01",
+        "status": "financed"
+      },
+      {
+        "id": "INV-1009",
+        "counterparty": "Garcia-James Holdings",
+        "amount_aed": 8700.0,
+        "due_date": "2026-08-13",
+        "status": "pending"
+      },
+      {
+        "id": "INV-1010",
+        "counterparty": "Abbott-Munoz Group",
+        "amount_aed": 14400.0,
+        "due_date": "2026-08-08",
+        "status": "pending"
+      },
+      {
+        "id": "INV-1011",
+        "counterparty": "Blair PLC Group",
+        "amount_aed": 13300.0,
+        "due_date": "2026-07-18",
+        "status": "financed"
+      },
+      {
+        "id": "INV-1012",
+        "counterparty": "Dudley Group Trading LLC",
+        "amount_aed": 28900.0,
+        "due_date": "2026-05-22",
+        "status": "financed"
+      },
+      {
+        "id": "INV-1013",
+        "counterparty": "Arnold Ltd Group",
+        "amount_aed": 13600.0,
+        "due_date": "2026-07-14",
+        "status": "financed"
+      },
+      {
+        "id": "INV-1014",
+        "counterparty": "Mcclure Est.",
+        "amount_aed": 12200.0,
+        "due_date": "2026-07-31",
+        "status": "pending"
+      }
+    ],
+    "scoring_inputs": {
+      "cashflow_consistency": 0.695,
+      "transaction_reputation": 0.448,
+      "platform_behaviour": 0.818,
+      "network_strength": 0.647,
+      "digital_footprint": 0.252
+    },
+    "tawtheeq_score": 58,
+    "score_breakdown": [
+      {
+        "category": "cashflow_consistency",
+        "weight": 0.3,
+        "value": 0.695,
+        "contribution_points": 20.8
+      },
+      {
+        "category": "platform_behaviour",
+        "weight": 0.15,
+        "value": 0.818,
+        "contribution_points": 12.3
+      },
+      {
+        "category": "transaction_reputation",
+        "weight": 0.25,
+        "value": 0.448,
+        "contribution_points": 11.2
+      },
+      {
+        "category": "network_strength",
+        "weight": 0.15,
+        "value": 0.647,
+        "contribution_points": 9.7
+      },
+      {
+        "category": "digital_footprint",
+        "weight": 0.15,
+        "value": 0.252,
+        "contribution_points": 3.8
+      }
+    ],
+    "score_history": [
+      {
+        "event": "initial",
+        "score": 58
+      },
+      {
+        "event": "3_successful_repayments",
+        "score": 61
+      }
+    ],
+    "provenance": {
+      "source_datasets": [
+        "kaggle:lendingclub",
+        "kaggle:sba_loans",
+        "yfinance:AEDUSD=X"
+      ],
+      "generated_at": "2026-07-23",
+      "method": "distribution_approximation_of_public_dataset_statistics"
+    }
+  },
+  {
+    "persona_id": "P2_thin_file_sme",
+    "display_name": "Kareem",
+    "sector": "Construction",
+    "business_age_months": 9,
+    "narrative": "Construction subcontractor, cash-heavy trade with no formal banking credit history at all. Scoring must lean on cashflow consistency and network strength, since transaction reputation has little to draw on.",
+    "invoices": [
+      {
+        "id": "INV-1001",
+        "counterparty": "Williams and Sons Est.",
+        "amount_aed": 11800.0,
+        "due_date": "2026-05-31",
+        "status": "financed"
+      },
+      {
+        "id": "INV-1002",
+        "counterparty": "Galloway-Wyatt Holdings",
+        "amount_aed": 9400.0,
+        "due_date": "2026-05-17",
+        "status": "financed"
+      },
+      {
+        "id": "INV-1003",
+        "counterparty": "James Group FZE",
+        "amount_aed": 20700.0,
+        "due_date": "2026-08-03",
+        "status": "pending"
+      },
+      {
+        "id": "INV-1004",
+        "counterparty": "Flowers General Contracting",
+        "amount_aed": 13900.0,
+        "due_date": "2026-04-25",
+        "status": "overdue"
+      },
+      {
+        "id": "INV-1005",
+        "counterparty": "Adams Group",
+        "amount_aed": 9300.0,
+        "due_date": "2026-05-18",
+        "status": "financed"
+      },
+      {
+        "id": "INV-1006",
+        "counterparty": "Reid Trading LLC",
+        "amount_aed": 21100.0,
+        "due_date": "2026-05-01",
+        "status": "financed"
+      },
+      {
+        "id": "INV-1007",
+        "counterparty": "Gray-Mayo General Contracting",
+        "amount_aed": 22200.0,
+        "due_date": "2026-04-20",
+        "status": "financed"
+      },
+      {
+        "id": "INV-1008",
+        "counterparty": "Watts Trading LLC",
+        "amount_aed": 7800.0,
+        "due_date": "2026-08-09",
+        "status": "pending"
+      },
+      {
+        "id": "INV-1009",
+        "counterparty": "Perez Inc General Contracting",
+        "amount_aed": 19900.0,
+        "due_date": "2026-07-29",
+        "status": "pending"
+      },
+      {
+        "id": "INV-1010",
+        "counterparty": "Morales-Jones Group",
+        "amount_aed": 16800.0,
+        "due_date": "2026-08-09",
+        "status": "pending"
+      },
+      {
+        "id": "INV-1011",
+        "counterparty": "Walter Group",
+        "amount_aed": 15700.0,
+        "due_date": "2026-08-20",
+        "status": "pending"
+      }
+    ],
+    "scoring_inputs": {
+      "cashflow_consistency": 0.767,
+      "transaction_reputation": 0.318,
+      "platform_behaviour": 0.571,
+      "network_strength": 0.682,
+      "digital_footprint": 0.307
+    },
+    "tawtheeq_score": 54,
+    "score_breakdown": [
+      {
+        "category": "cashflow_consistency",
+        "weight": 0.3,
+        "value": 0.767,
+        "contribution_points": 23.0
+      },
+      {
+        "category": "network_strength",
+        "weight": 0.15,
+        "value": 0.682,
+        "contribution_points": 10.2
+      },
+      {
+        "category": "platform_behaviour",
+        "weight": 0.15,
+        "value": 0.571,
+        "contribution_points": 8.6
+      },
+      {
+        "category": "transaction_reputation",
+        "weight": 0.25,
+        "value": 0.318,
+        "contribution_points": 8.0
+      },
+      {
+        "category": "digital_footprint",
+        "weight": 0.15,
+        "value": 0.307,
+        "contribution_points": 4.6
+      }
+    ],
+    "score_history": [
+      {
+        "event": "initial",
+        "score": 54
+      },
+      {
+        "event": "3_successful_repayments",
+        "score": 58
+      }
+    ],
+    "provenance": {
+      "source_datasets": [
+        "kaggle:sba_loans",
+        "kaggle:give_me_some_credit",
+        "yfinance:AEDUSD=X"
+      ],
+      "generated_at": "2026-07-23",
+      "method": "distribution_approximation_of_public_dataset_statistics"
+    }
+  },
+  {
+    "persona_id": "P3_female_led_micro",
+    "display_name": "Lina",
+    "sector": "Retail",
+    "business_age_months": 22,
+    "narrative": "Woman-led retail SME, rejected by banks for lack of collateral despite viable cashflow. Needs a strong cashflow/invoice-history signal to override the collateral-free risk flag.",
+    "invoices": [
+      {
+        "id": "INV-1001",
+        "counterparty": "Wilkerson-Day Holdings",
+        "amount_aed": 20900.0,
+        "due_date": "2026-05-11",
+        "status": "financed"
+      },
+      {
+        "id": "INV-1002",
+        "counterparty": "Baker and Sons General Contracting",
+        "amount_aed": 6600.0,
+        "due_date": "2026-05-09",
+        "status": "financed"
+      },
+      {
+        "id": "INV-1003",
+        "counterparty": "Hoffman Group",
+        "amount_aed": 11400.0,
+        "due_date": "2026-07-31",
+        "status": "pending"
+      },
+      {
+        "id": "INV-1004",
+        "counterparty": "Ross Est.",
+        "amount_aed": 10400.0,
+        "due_date": "2026-03-31",
+        "status": "financed"
+      },
+      {
+        "id": "INV-1005",
+        "counterparty": "Snyder Group",
+        "amount_aed": 33600.0,
+        "due_date": "2026-04-17",
+        "status": "overdue"
+      },
+      {
+        "id": "INV-1006",
+        "counterparty": "Burton Ltd Holdings",
+        "amount_aed": 9200.0,
+        "due_date": "2026-07-10",
+        "status": "financed"
+      },
+      {
+        "id": "INV-1007",
+        "counterparty": "Carlson-Cruz General Contracting",
+        "amount_aed": 5900.0,
+        "due_date": "2026-06-10",
+        "status": "financed"
+      },
+      {
+        "id": "INV-1008",
+        "counterparty": "Ferrell FZE",
+        "amount_aed": 12300.0,
+        "due_date": "2026-06-27",
+        "status": "overdue"
+      },
+      {
+        "id": "INV-1009",
+        "counterparty": "Frazier Inc General Contracting",
+        "amount_aed": 20400.0,
+        "due_date": "2026-07-07",
+        "status": "financed"
+      },
+      {
+        "id": "INV-1010",
+        "counterparty": "Dyer Est.",
+        "amount_aed": 21800.0,
+        "due_date": "2026-08-03",
+        "status": "pending"
+      },
+      {
+        "id": "INV-1011",
+        "counterparty": "Rodriguez-Graham Group",
+        "amount_aed": 12200.0,
+        "due_date": "2026-05-14",
+        "status": "financed"
+      },
+      {
+        "id": "INV-1012",
+        "counterparty": "Smith-Bowen Trading LLC",
+        "amount_aed": 11400.0,
+        "due_date": "2026-09-03",
+        "status": "pending"
+      },
+      {
+        "id": "INV-1013",
+        "counterparty": "Baker General Contracting",
+        "amount_aed": 13300.0,
+        "due_date": "2026-04-29",
+        "status": "overdue"
+      },
+      {
+        "id": "INV-1014",
+        "counterparty": "Harrell LLC Trading LLC",
+        "amount_aed": 7300.0,
+        "due_date": "2026-03-30",
+        "status": "overdue"
+      },
+      {
+        "id": "INV-1015",
+        "counterparty": "Romero Holdings",
+        "amount_aed": 8900.0,
+        "due_date": "2026-05-02",
+        "status": "financed"
+      },
+      {
+        "id": "INV-1016",
+        "counterparty": "Ryan PLC Est.",
+        "amount_aed": 19400.0,
+        "due_date": "2026-08-23",
+        "status": "pending"
+      },
+      {
+        "id": "INV-1017",
+        "counterparty": "George Group General Contracting",
+        "amount_aed": 21600.0,
+        "due_date": "2026-05-12",
+        "status": "financed"
+      },
+      {
+        "id": "INV-1018",
+        "counterparty": "Rodriguez LLC General Contracting",
+        "amount_aed": 11700.0,
+        "due_date": "2026-06-16",
+        "status": "financed"
+      }
+    ],
+    "scoring_inputs": {
+      "cashflow_consistency": 0.874,
+      "transaction_reputation": 0.591,
+      "platform_behaviour": 0.754,
+      "network_strength": 0.503,
+      "digital_footprint": 0.464
+    },
+    "tawtheeq_score": 67,
+    "score_breakdown": [
+      {
+        "category": "cashflow_consistency",
+        "weight": 0.3,
+        "value": 0.874,
+        "contribution_points": 26.2
+      },
+      {
+        "category": "transaction_reputation",
+        "weight": 0.25,
+        "value": 0.591,
+        "contribution_points": 14.8
+      },
+      {
+        "category": "platform_behaviour",
+        "weight": 0.15,
+        "value": 0.754,
+        "contribution_points": 11.3
+      },
+      {
+        "category": "network_strength",
+        "weight": 0.15,
+        "value": 0.503,
+        "contribution_points": 7.5
+      },
+      {
+        "category": "digital_footprint",
+        "weight": 0.15,
+        "value": 0.464,
+        "contribution_points": 7.0
+      }
+    ],
+    "score_history": [
+      {
+        "event": "initial",
+        "score": 67
+      },
+      {
+        "event": "3_successful_repayments",
+        "score": 70
+      }
+    ],
+    "provenance": {
+      "source_datasets": [
+        "kaggle:lendingclub",
+        "kaggle:give_me_some_credit"
+      ],
+      "generated_at": "2026-07-23",
+      "method": "distribution_approximation_of_public_dataset_statistics"
+    }
+  },
+  {
+    "persona_id": "P4_digital_native_micro",
+    "display_name": "Zara",
+    "sector": "E-commerce",
+    "business_age_months": 6,
+    "narrative": "Micro-business owner, Arabic-first / digital-native, no formal financial statements. Scored primarily via platform activity and order fulfilment, so Platform Behaviour and Digital Footprint carry the most weight for this persona.",
+    "invoices": [
+      {
+        "id": "INV-1001",
+        "counterparty": "Allen-Allen General Contracting",
+        "amount_aed": 12000.0,
+        "due_date": "2026-08-01",
+        "status": "pending"
+      },
+      {
+        "id": "INV-1002",
+        "counterparty": "Arroyo Est.",
+        "amount_aed": 7600.0,
+        "due_date": "2026-07-17",
+        "status": "overdue"
+      },
+      {
+        "id": "INV-1003",
+        "counterparty": "Spence PLC Est.",
+        "amount_aed": 11400.0,
+        "due_date": "2026-06-09",
+        "status": "financed"
+      },
+      {
+        "id": "INV-1004",
+        "counterparty": "Anderson Group Est.",
+        "amount_aed": 14900.0,
+        "due_date": "2026-08-26",
+        "status": "pending"
+      },
+      {
+        "id": "INV-1005",
+        "counterparty": "Martin Trading LLC",
+        "amount_aed": 18900.0,
+        "due_date": "2026-04-19",
+        "status": "financed"
+      },
+      {
+        "id": "INV-1006",
+        "counterparty": "Hickman Ltd Trading LLC",
+        "amount_aed": 21300.0,
+        "due_date": "2026-04-21",
+        "status": "financed"
+      },
+      {
+        "id": "INV-1007",
+        "counterparty": "Harris Holdings",
+        "amount_aed": 11700.0,
+        "due_date": "2026-05-26",
+        "status": "financed"
+      },
+      {
+        "id": "INV-1008",
+        "counterparty": "Brooks Est.",
+        "amount_aed": 14100.0,
+        "due_date": "2026-07-03",
+        "status": "financed"
+      },
+      {
+        "id": "INV-1009",
+        "counterparty": "Walker LLC Trading LLC",
+        "amount_aed": 6700.0,
+        "due_date": "2026-05-23",
+        "status": "financed"
+      },
+      {
+        "id": "INV-1010",
+        "counterparty": "Chapman and Sons Group",
+        "amount_aed": 7100.0,
+        "due_date": "2026-05-19",
+        "status": "financed"
+      },
+      {
+        "id": "INV-1011",
+        "counterparty": "Robinson Group",
+        "amount_aed": 18400.0,
+        "due_date": "2026-08-30",
+        "status": "pending"
+      },
+      {
+        "id": "INV-1012",
+        "counterparty": "Jones Inc General Contracting",
+        "amount_aed": 9000.0,
+        "due_date": "2026-06-08",
+        "status": "financed"
+      },
+      {
+        "id": "INV-1013",
+        "counterparty": "Jones-Young Group",
+        "amount_aed": 30200.0,
+        "due_date": "2026-05-07",
+        "status": "financed"
+      },
+      {
+        "id": "INV-1014",
+        "counterparty": "Washington FZE",
+        "amount_aed": 12100.0,
+        "due_date": "2026-05-07",
+        "status": "overdue"
+      },
+      {
+        "id": "INV-1015",
+        "counterparty": "Johnston General Contracting",
+        "amount_aed": 8800.0,
+        "due_date": "2026-07-21",
+        "status": "financed"
+      },
+      {
+        "id": "INV-1016",
+        "counterparty": "Lee-Davis Holdings",
+        "amount_aed": 13200.0,
+        "due_date": "2026-04-07",
+        "status": "financed"
+      },
+      {
+        "id": "INV-1017",
+        "counterparty": "Gomez-Jenkins Est.",
+        "amount_aed": 12300.0,
+        "due_date": "2026-04-09",
+        "status": "financed"
+      },
+      {
+        "id": "INV-1018",
+        "counterparty": "Brown General Contracting",
+        "amount_aed": 23400.0,
+        "due_date": "2026-07-19",
+        "status": "financed"
+      },
+      {
+        "id": "INV-1019",
+        "counterparty": "Powell LLC Est.",
+        "amount_aed": 18700.0,
+        "due_date": "2026-04-27",
+        "status": "financed"
+      },
+      {
+        "id": "INV-1020",
+        "counterparty": "Wright and Sons General Contracting",
+        "amount_aed": 16800.0,
+        "due_date": "2026-06-23",
+        "status": "overdue"
+      }
+    ],
+    "scoring_inputs": {
+      "cashflow_consistency": 0.631,
+      "transaction_reputation": 0.385,
+      "platform_behaviour": 0.873,
+      "network_strength": 0.417,
+      "digital_footprint": 0.782
+    },
+    "tawtheeq_score": 60,
+    "score_breakdown": [
+      {
+        "category": "cashflow_consistency",
+        "weight": 0.3,
+        "value": 0.631,
+        "contribution_points": 18.9
+      },
+      {
+        "category": "platform_behaviour",
+        "weight": 0.15,
+        "value": 0.873,
+        "contribution_points": 13.1
+      },
+      {
+        "category": "digital_footprint",
+        "weight": 0.15,
+        "value": 0.782,
+        "contribution_points": 11.7
+      },
+      {
+        "category": "transaction_reputation",
+        "weight": 0.25,
+        "value": 0.385,
+        "contribution_points": 9.6
+      },
+      {
+        "category": "network_strength",
+        "weight": 0.15,
+        "value": 0.417,
+        "contribution_points": 6.3
+      }
+    ],
+    "score_history": [
+      {
+        "event": "initial",
+        "score": 60
+      },
+      {
+        "event": "3_successful_repayments",
+        "score": 63
+      }
+    ],
+    "provenance": {
+      "source_datasets": [
+        "kaggle:give_me_some_credit",
+        "data.gov.ae:sme_sector_stats"
+      ],
+      "generated_at": "2026-07-23",
+      "method": "distribution_approximation_of_public_dataset_statistics"
+    }
+  }
+]
